@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-25T16:53:45.086Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="8aeQCeAh0BkEs6EzqbHM" version="23.0.2" type="device">
+<mxfile host="Electron" modified="2024-03-25T17:07:54.371Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="wIeMIuNpI94tlTJ-65I8" version="23.0.2" type="device">
   <diagram name="Página-1" id="g3zR-mfjjbaJtb-AWxZO">
-    <mxGraphModel dx="993" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="635" dy="415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -164,18 +164,13 @@
             <mxPoint x="480" y="270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TAOlccM_JYzeu5ECIedE-86" value="M" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="TAOlccM_JYzeu5ECIedE-84">
-          <mxGeometry x="0.5873" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-87" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="TAOlccM_JYzeu5ECIedE-84">
           <mxGeometry x="-0.5754" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-79" value="Promocoes_servicos" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="130" y="290" width="140" height="50" as="geometry" />
+          <mxGeometry x="30" y="290" width="140" height="50" as="geometry" />
         </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-126" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.937;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="TAOlccM_JYzeu5ECIedE-10" target="TAOlccM_JYzeu5ECIedE-125">
           <mxGeometry relative="1" as="geometry">
@@ -195,7 +190,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-125" value="Pacotes_Promocoes_pacotes" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="620" y="70" width="140" height="50" as="geometry" />
+          <mxGeometry x="600" y="70" width="190" height="50" as="geometry" />
         </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-135" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TAOlccM_JYzeu5ECIedE-131" target="TAOlccM_JYzeu5ECIedE-79">
           <mxGeometry relative="1" as="geometry" />
@@ -209,7 +204,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TAOlccM_JYzeu5ECIedE-131" value="Servicos_promocoes_servicos" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="330" y="290" width="140" height="80" as="geometry" />
+          <mxGeometry x="300" y="290" width="170" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
