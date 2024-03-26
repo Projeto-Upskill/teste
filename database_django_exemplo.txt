@@ -1,0 +1,116 @@
+from django.db import models
+
+class Country(models.Model):
+    #criar id_country
+    country_name = models.CharField(max_length=255)
+        
+
+class City(models.Model):
+    #criar id_city
+    city_name = models.CharField(max_length=255)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+
+class Street(models.Model):
+    #criar id_street
+    street_name = models.CharField(max_length=255)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+
+class PostCode(models.Model):
+    # criar id_post_code
+    post_code = models.CharField(max_length=90)
+
+class Address(models.Model):
+    #criar pk id_adress
+    id_street = models.ForeignKey(Street, on_delete=models.CASCADE)
+    door_number = models.IntergerField()
+    postcode = models.ForeignKey(PostCode, on_delete=models.CASCADE)
+    client = models.OneToOneField('Client', on_delete=models.CASCADE)
+
+class Client(models.Model):
+    name = models.CharField(max_length=255)
+    num = models.CharField(max_length=15)
+    email = models.EmailField()
+    birth_date = models.DateField()
+    active = models.BooleanField()
+
+class ClientType(models.Model):
+    type_name = models.CharField(max_length=255)
+    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+
+class ServiceType(models.Model):
+    service_name = models.CharField(max_length=150)
+
+class Service(models.Model):
+    service_name = models.CharField(max_length=150)
+    service_type = models.ForeignKey(ServiceType, on_delete=models.CASCADE)
+    current_service_price_money = models.DecimalField(max_digits=10, decimal_places=2)
+
+class ClientService(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    service_date = models.DateField()
+
+class Package(models.Model):
+    package_name = models.CharField(max_length=150)
+    current_package_price_money = models.DecimalField(max_digits=10, decimal_places=2)
+    active = models.BooleanField()
+
+class ClientPackage(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    membership_start_date = models.DateField()
+    membership_end_date = models.DateField(null=True, blank=True)
+    active = models.BooleanField()
+
+class PackageService(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+
+class InvoiceService(models.Model):
+    client_service = models.ForeignKey(ClientService, on_delete=models.CASCADE)
+    final_service_price_money = models.DecimalField(max_digits=10, decimal_places=2)
+
+class InvoicePackage(models.Model):
+    client_package = models.ForeignKey(ClientPackage, on_delete=models.CASCADE)
+    final_package_price_money = models.DecimalField(max_digits=10, decimal_places=2)
+
+class PackagePromotion(models.Model):
+    discount_code = models.CharField(max_length=255)
+    active = models.BooleanField()
+
+class PackagePromotionPackage(models.Model):
+    package_promotion = models.ForeignKey(PackagePromotion, on_delete=models.CASCADE)
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+
+class ServicePromotion(models.Model):
+    discount_code = models.CharField(max_length=255)
+    active = models.BooleanField()
+
+class ServicePromotionService(models.Model):
+    service_promotion = models.ForeignKey(ServicePromotion, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+
+class Operator(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    birth_date = models.DateField()
+    admission_date = models.DateField()
+
+class Administrator(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    birth_date = models.DateField()
+    active = models.BooleanField()
+
+# Assuming there are loyalty program tables for client services and packages.
+class ClientServiceLoyalty(models.Model):
+    client_service = models.ForeignKey(ClientService, on_delete=models.CASCADE)
+    membership_start_date = models.DateField()
+    membership_end_date = models.DateField(null=True, blank=True)
+    active = models.BooleanField()
+
+class ClientPackageLoyalty(models.Model):
+    client_package = models.ForeignKey(ClientPackage, on_delete=models.CASCADE)
+    membership_start_date = models.DateField()
+    membership_end_date = models.DateField(null=True, blank=True)
+    active = models.BooleanField()
