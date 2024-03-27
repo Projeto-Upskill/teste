@@ -6,7 +6,7 @@ class Country(models.Model):
     country_name = models.CharField(max_length=255)
 
     class Meta:
-        db_table = 'client'
+        db_table = 'country'
 
 
 class City(models.Model):
@@ -114,7 +114,7 @@ class ClientPackage(models.Model):
     active = models.BooleanField()
 
     class Meta:
-        db_table = 'client_package'
+        db_table = 'clientpackage'
 
 
 class PackageService(models.Model):
